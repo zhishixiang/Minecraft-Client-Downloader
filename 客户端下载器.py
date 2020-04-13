@@ -28,6 +28,7 @@ def choice():
     if choice == "n":
         assert(True)
     elif choice == "y" :
+        #下面的是安装包地址，必须使用zip格式
         zip_src = wget.download("http://192.168.199.198/test.zip")
     else:
         print("无效操作，请重试！")
@@ -46,6 +47,8 @@ def unzip_file(zip_src, dst_dir):
     else:
         print('This is not zip')
 if unzip_dir == "a":
+    #当选择自动安装后，程序将会被解压至C:\fxrc文件夹
+    #可自行修改
     unzip_file(zip_src,'C:\\fxrc')
 else:
     unzip_file(zip_src,unzip_dir)
